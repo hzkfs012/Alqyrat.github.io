@@ -1,0 +1,132 @@
+<!-- templates/products/product_list.html -->
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Rate - Al Qyrat</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .product-card {
+            margin-bottom: 40px; /* Increased margin between cards */
+            border: 2px solid maroon;
+            border-radius: 20px; /* More rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+            width: 100%; /* Adjusted width */
+            max-width: 350px; /* Increased width */
+            height: 200px; /* Adjusted height */
+            background-color: #f0f0f0; /* Light grey background */
+        }
+        .product-card .card-body {
+            color: black;
+            padding: 20px;
+        }
+        .product-card .card-title {
+            font-weight: 600;
+            color: white;
+            background-color: maroon;
+            text-align: center;
+            padding: 15px;
+            border-radius: 15px; /* Rounded corners for title */
+            font-size: 1.4em; /* Reduced font size */
+            margin: -20px -20px 15px -20px;
+            position: relative; /* Ensure the title is positioned relative to the card body */
+            top: 0; /* Position at the top */
+        }
+        .product-card .card-text {
+            font-weight: 600;
+            color: black;
+            font-size: 1.8em; /* Increased font size for price */
+            text-align: center; /* Center text */
+            margin-top: 60px; /* Adjust top margin to avoid overlapping with title */
+        }
+        .navbar {
+            background-color: maroon;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: white !important;
+            font-size: 1.8em; /* Increased font size */
+        }
+        .navbar-brand img {
+            height: 60px; /* Increased size */
+            margin-right: 10px;
+        }
+        .footer {
+            background-color: maroon;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+        }
+        .header-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: maroon;
+            font-size: 1.5em; /* Reduced font size */
+            margin-bottom: 20px;
+        }
+        .header-title span {
+            font-size: 1.3em; /* Reduced font size */
+        }
+        .header-title .arabic {
+            font-size: 1.3em; /* Reduced font size */
+            direction: rtl;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/alqyrat_logo.png' %}" alt="Al Qyrat Logo">
+            Al Qyrat
+        </a>
+    </nav>
+
+    <div class="container">
+        <div class="header-title">
+            <span>Gold Rate - {{ current_date }}</span>
+            <span class="arabic">سعر الذهب</span>
+        </div>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-lg-3 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card product-card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.price }} QAR</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 Al Qyrat. All rights reserved.
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
