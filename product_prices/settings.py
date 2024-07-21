@@ -136,4 +136,4 @@ if not DEBUG:    # Tell Django to copy static assets into a path called `staticf
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+#STATIC_ROOT = BASE_DIR / 'staticfiles'
