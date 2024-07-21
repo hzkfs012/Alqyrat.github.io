@@ -8,3 +8,8 @@ python manage.py migrate
 
 
 pip install --upgrade pip
+
+if [[ $CREATE_SUPERUSER ]];
+then
+    python manage.py createsuperuser --no-input
+fi
