@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load custom_filters %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,31 +40,30 @@
         }
 
         .product-card {
-            margin-bottom: 40px;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             width: 100%;
             max-width: 300px;
-            height: 250px;
             background: #fff;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .product-card .card-body {
             color: #333;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             height: 100%;
             position: relative;
         }
@@ -75,17 +74,17 @@
             background-color: maroon;
             text-align: center;
             padding: 10px;
-            border-radius: 10px;
-            font-size: 1.4em;
-            margin-bottom: 15px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-bottom: 10px;
         }
 
         .product-card .card-text {
             font-weight: 600;
             color: maroon;
-            font-size: 1.8em; /* Increased font size for the price */
+            font-size: 1.4em;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .navbar {
@@ -96,11 +95,11 @@
             display: flex;
             align-items: center;
             color: white !important;
-            font-size: 1.8em;
+            font-size: 1.5em;
         }
 
         .navbar-brand img {
-            height: 50px;
+            height: 40px;
             margin-right: 10px;
         }
 
@@ -120,21 +119,21 @@
             background: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
             font-size: 1.4em;
             justify-content: center;
             white-space: nowrap;
         }
 
         .header-title span {
-            font-size: 1.6em;
+            font-size: 1.4em;
             font-weight: bold;
             margin-right: 10px;
         }
 
         .header-title .arabic {
-            font-size: 1.6em;
+            font-size: 1.4em;
             direction: rtl;
             text-align: right;
         }
@@ -150,11 +149,11 @@
             }
 
             .header-title span {
-                font-size: 1.4em;
+                font-size: 1.2em;
             }
 
             .header-title .arabic {
-                font-size: 1.4em;
+                font-size: 1.2em;
             }
         }
 
@@ -197,6 +196,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.name }}</h5>
                                 <p class="card-text">{{ product.price }} QAR</p>
+                                <p class="card-text arabic">ريال {{ product.price|to_arabic }}</p>
                             </div>
                         </div>
                     </div>
