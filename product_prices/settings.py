@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'product_prices.wsgi.application'
 
 DATABASES = {
 #    'default': dj_database_url.config(default=os.getenv('DATABASE_URL',f"sqlite:////{BASE_DIR}/db.sqlite3"))
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL',f"postgresql://alqyratg_user:nsPKwj6224c8rciDNf6Q4PXFZ60qNnSk@dpg-cqd601mehbks73bqaerg-a.oregon-postgres.render.com/alqyratg"))
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL',f"postgresql://alqyratg2_user:UxRchJ6yDx7rSw616pngCMW4GpBgNLof@dpg-cr14ho3qf0us73fj091g-a.oregon-postgres.render.com/alqyratg2"))
 
 
 }
